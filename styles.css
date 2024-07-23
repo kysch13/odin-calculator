@@ -4,4 +4,139 @@ body {
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    width: 302px;
+    height: 518px;
+    border-radius: 20px;
+    background: #4A4251;
+    filter: drop-shadow(0 4px 18px #00000077);
+    box-shadow: inset 0 0 10px #000000;
+    position: relative;
+    font-family: 'Michroma', sans-serif;
+    font-size: 24px;
+}
+
+.calc-upper {
+    position: absolute;
+    width: 280px;
+    height: 247px;
+    top: 10px;
+    left: 10px;
+    background: #4A4251;
+    border: 1px solid #00000077;
+    border-radius: 9px;
+    filter: drop-shadow(0 2px 1px #DEDEDE33);
+    box-shadow: inset 0 2px 2px #333333;
+}
+
+.solar-cont {
+    position: absolute;
+    width: 248px;
+    height: 49px;
+    top: 15px;
+    left: 15px;
+    background: #4A4251;
+    border: 1px solid #00000033;
+    border-radius: 6px;
+    filter: drop-shadow(0 2px 1px #DEDEDE33);
+    box-shadow: inset 0 2px 2px #111111;
+
+}
+
+.solar-panel {
+    position: absolute;
+    width: 228px;
+    height: 37px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    top: 5px;
+    left: 9px;
+    background: #341827;
+    box-shadow: inset 0 4px 4px #111111;
+
+}
+
+.display-cont {
+    position: absolute;
+    width: 248px;
+    height: 82px;
+    top: 118px;
+    left: 15px;
+    background: #4A4251;
+    border: 1px solid #00000033;
+    border-radius: 6px;
+    filter: drop-shadow(0 2px 1px #DEDEDE33);
+    box-shadow: inset 0 2px 2px #111111;
+}
+
+#display {
+    position: absolute;
+    width: 215px;
+    height: 60px;
+    top: 10px;
+    left: 15px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background: #D5E5DB;
+    filter: drop-shadow(0 2px 1px #DEDEDE33);
+    box-shadow: inset 0 2px 2px #111111;
+}
+
+.keypad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 254px;
+    height: 185px;
+    justify-content: space-between;
+    position: absolute;
+    top: 300px;
+    left: 24px;
+}
+
+.keypad > div {
+    background: #271A24;
+    border: 1px solid #271A24;
+    border-radius: 4px;
+    width: 41px;
+    height: 36px;
+    filter: drop-shadow(0 2px 1px #11111177);
+    box-shadow: inset 0 4px 1px #DEDEDE33;
+    color: #DBDBE0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.keypad > div#key-C, .keypad > div#key-AC {
+    background: #B26380;
+    border: 1px solid #B26380;
+}
+
+.keypad > div#key-AC {
+    font-size: 18px;
+}
+
+.keypad > div:active {
+    box-shadow: inset 0 2px 1px #222222;
+    filter: drop-shadow(0 1px 0px #11111177);
+    background: rgb(29, 19, 26);
+    font-size: 22.5px;
+
+}
+
+.keypad > div#key-C:active, .keypad > div#key-AC:active {
+    box-shadow: inset 0 2px 1px #924d66;
+    filter: drop-shadow(0 1px 0px #11111177);
+    background: #a35773;
+
+}
+
+.keypad > div#key-AC:active {
+    font-size: 17px;
 }
