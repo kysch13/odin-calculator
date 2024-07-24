@@ -111,6 +111,9 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    user-select: none;
 }
 
 .keypad > div#key-C, .keypad > div#key-AC {
