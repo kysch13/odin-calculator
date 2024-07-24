@@ -61,6 +61,12 @@ body {
 
 }
 
+.logos {
+    position: absolute;
+    top: 77px;
+    left: 21px;
+}
+
 .display-cont {
     position: absolute;
     width: 248px;
@@ -140,6 +146,6 @@ body {
 
 }
 
-.keypad > div#key-AC:active {
+.keypad > div#key-AC:active, .keypad > div#key-X {
     font-size: 17px;
 }
