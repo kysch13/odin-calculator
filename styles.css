@@ -85,6 +85,8 @@ body {
 
 #display {
     position: absolute;
+    display: flex;
+    align-items: center;
     width: 215px;
     height: 60px;
     top: 10px;
@@ -97,6 +99,20 @@ body {
     -webkit-touch-callout: none;
     -webkit-user-select: none; 
     user-select: none;
+    font-family: 'DSEG7', 'Michroma', sans-serif;
+}
+
+#display-text {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    text-align: right;
+}
+
+#display-text::before {
+    position: absolute;
+    content: '88888888';
+    color: #33333311;
 }
 
 .keypad {
@@ -135,21 +151,6 @@ body {
 
 .keypad > div#key-A {
     font-size: 18px;
-}
-
-.keypad > div:active {
-    box-shadow: inset 0 2px 1px #222222;
-    filter: drop-shadow(0 1px 0px #11111177);
-    background: rgb(29, 19, 26);
-    font-size: 22.5px;
-
-}
-
-.keypad > div#key-C:active, .keypad > div#key-A:active {
-    box-shadow: inset 0 2px 1px #924d66;
-    filter: drop-shadow(0 1px 0px #11111177);
-    background: #a35773;
-
 }
 
 .keyPressActive {

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ODIN | Calculator</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="dseg7.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
@@ -21,7 +22,9 @@
                     <img src="./img/calc_logos.png" alt="CASIO OD-1N">
                 </div>
                 <div class="display-cont">
-                    <div id="display"></div>
+                    <div id="display">
+                        <span id="display-text">0.123456789</span>
+                    </div>
                 </div>
             </div>
             <div class="calc-lower">
@@ -34,8 +37,8 @@
                     <div id="key-4">4</div>
                     <div id="key-5">5</div>
                     <div id="key-6">6</div>
-                    <div id="key-multiply">x</div>
-                    <div id="key-divide"><svg xmlns="http://www.w3.org/2000/svg" fill="#DBDBE0" width="20" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M272 96a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 320a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM400 288c17.7 0 32-14.3 32-32s-14.3-32-32-32L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l352 0z"/></svg></div>
+                    <div id="key-multiply" style="align-items: normal;">x</div>
+                    <div id="key-divide"><svg xmlns="http://www.w3.org/2000/svg" fill="#DBDBE0" width="20" viewBox="0 -40 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M272 96a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 320a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM400 288c17.7 0 32-14.3 32-32s-14.3-32-32-32L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l352 0z"/></svg></div>
                     <div id="key-1">1</div>
                     <div id="key-2">2</div>
                     <div id="key-3">3</div>
