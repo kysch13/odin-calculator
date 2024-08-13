@@ -1,5 +1,5 @@
 body {
-    background: #000000 radial-gradient(#333333, #000000);
+    background: #000000 radial-gradient(#251e2f, #000000);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 100vw;
@@ -111,8 +111,9 @@ body {
 
 #display-text::before {
     position: absolute;
-    content: '88888888';
+    content: '8888888888';
     color: #33333311;
+    right: 10px;
 }
 
 .keypad {
