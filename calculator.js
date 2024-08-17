@@ -75,7 +75,7 @@ const calculator = {
         }
         this.decimal = false;
     },
-    calculate(a, o, b) {
+    operate(a, o, b) {
         if (typeof a === 'number' && o && typeof b === 'number') {
             switch(o) {
                 case ('+'):
@@ -89,20 +89,36 @@ const calculator = {
                     break;
                 case ('/'): 
                     if (b === 0) {
-                        this.result = 'Error!';
+                        this.result = ('bad idea');
                     } else {
                         this.result = a / b;
                     }
                     break;
             }
-            this.displayText = [];
-            this.displayText.push(this.result);
-            this.updateScreen();
-            this.numA = Number(this.result);
-            this.numB = Number(this.result);
-            this.currentNum = 'numA';
-            this.result = false;
-            this.displayText = [];
+            console.log(`result = ${this.result}`);
+            if (this.result === 'bad idea') {
+                this.clear();
+                this.displayText = [];
+                this.displayText.push('bad idea');
+                this.updateScreen();
+            } else {
+                if (this.result.toString().length > 10) {
+                    let trimmedResult = this.result.toString().slice(0, 10);
+                    console.log(`trimmed: ${trimmedResult}`);
+                    this.result = Number(trimmedResult);
+                }
+                
+                this.displayText = [];
+                this.displayText.push(this.result);
+                this.updateScreen();
+                this.numA = Number(this.result);
+                this.numB = Number(this.result);
+                this.currentNum = 'numA';
+                this.result = false;
+                this.displayText = [];
+            }
+
+
         }
 
 
@@ -127,7 +143,7 @@ keyPad.forEach(key => {
         } else if (keyVal === 'divide') {
             calculator.inputOperator('/');
         } else if (keyVal === 'equals') {
-            calculator.calculate(calculator.numA, calculator.operator, calculator.numB);
+            calculator.operate(calculator.numA, calculator.operator, calculator.numB);
         } else if (keyVal === 'pi') {
             calculator.inputPi();
         } else if (keyVal === 'decimal') {
