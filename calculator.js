@@ -95,7 +95,6 @@ const calculator = {
                     }
                     break;
             }
-            console.log(`result = ${this.result}`);
             if (this.result === 'bad idea') {
                 this.clear();
                 this.displayText = [];
@@ -104,7 +103,6 @@ const calculator = {
             } else {
                 if (this.result.toString().length > 10) {
                     let trimmedResult = this.result.toString().slice(0, 10);
-                    console.log(`trimmed: ${trimmedResult}`);
                     this.result = Number(trimmedResult);
                 }
                 
