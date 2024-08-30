@@ -113,6 +113,7 @@ const calculator = {
                 this.updateScreen();
                 this.numA = Number(this.result);
                 this.numB = Number(this.result);
+                this.operator = false;
                 this.currentNum = 'numA';
                 this.result = false;
                 this.displayText = [];
@@ -165,103 +166,40 @@ keyPad.forEach(key => {
 })
 
 window.addEventListener('keydown', (e) => {
-    keySelection(e, 'keydown');    
+    keyPress(e.key);    
 })
 
-function keySelection(e, eventType) {
-    
-}
 
-/*
-keyPad.forEach(key => {
-    key.addEventListener('click', (e) => {
-        keySelection(e.currentTarget.id, 'click');
-});
-})
 
-function keySelection(e, eventType) {
-    let keyChoice;
-    let keyPressed;
-    let keyID;
-    let keyActiveClassName = 'keyPressActive';
-    if (eventType === 'keydown') {
-        keyChoice = e.key;
-    } else if (eventType === 'click') {
-        keyChoice = e.slice(4);
-    } else {
-        return 'Error';
-    }
-
-    switch(keyChoice) {
-        case ('.'):
-            keyID = `#key-decimal`;
-            break;
-        case ('a'):
-            keyID = '#key-A';
-            keyActiveClassName = 'keyPressActiveAC';
-            calculator.clear();
-            break;
-        case ('A'):
-            keyID = '#key-A';
-            keyActiveClassName = 'keyPressActiveAC';
-            calculator.clear();
-            break;
-        case ('c'):
-            keyID = '#key-C';
-            keyActiveClassName = 'keyPressActiveAC';
-            calculator.clear();            
-            break;
-        case ('C'):
-            keyID = '#key-C';
-            keyActiveClassName = 'keyPressActiveAC';
-            calculator.clear();
-            break;
-        case ('x'):
-            keyID = '#key-multiply';
-            break;
-        case ('X'):
-            keyID = '#key-multiply';
-            break;
-        case ('*'):
-            keyID = '#key-multiply';
-            break;
-        case ('/'):
-            keyID = '#key-divide';
-            break;
-        case ('+'):
-            keyID = '#key-add';
-            break;
-        case ('-'):
-            keyID = '#key-subtract';
-            break;
-        case ('='):
-            keyID = '#key-equals';
-            break;
-        case ('Enter'):
-            keyID = '#key-equals';
-            break;
-        default:
-            keyID = `#key-${keyChoice}`;
-            calculator.inputNum(keyChoice);
-            break;
-
-    }
-    keyPressed = document.querySelector(keyID);
-    keyPressActiveStd(keyPressed, keyActiveClassName);
-    
-}
-
-function keyPressActiveStd(keyPressed, activeClassName) {
-    let keyVal;
-    if (keyPressed) {
-        keyPressed.classList.add(activeClassName);
-        keyPressed.onanimationend = () => {keyPressed.classList.remove(activeClassName)}
-    }
-    if (keyPressed.dataset.keyVal) {
-        keyVal = keyPressed.dataset.keyVal;
-
+function keyPress(key) {
+    if (key === '0' || 
+        key === '1' || 
+        key === '2' || 
+        key === '3' ||
+        key === '4' ||
+        key === '5' ||
+        key === '6' ||
+        key === '7' ||
+        key === '8' ||
+        key === '9') {
+        calculator.inputNum(key);
+    } else if (key === 'Backspace') {
+        calculator.erase();
+    } else if (key === '+') {
+        calculator.inputOperator('+');
+    } else if (key === '-') {
+        calculator.inputOperator('-');
+    } else if (key === '*' || key === 'X' || key === 'x') {
+        calculator.inputOperator('*');
+    } else if (key === '/' || key === 'd') {
+        calculator.inputOperator('/');
+    } else if (key === '=' || key === 'Enter') {
+        calculator.operate(calculator.numA, calculator.operator, calculator.numB);
+    } else if (key === 'p') {
+        calculator.inputPi();
+    } else if (key === '.') {
+        calculator.inputDecimal();
+    } else if (key === 'a' || key === 'A' || key === 'c' || key === 'C') {
+        calculator.clear();
     }
 }
-*/
-
-
